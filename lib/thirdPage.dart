@@ -7,14 +7,25 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 class ThirdPage extends StatelessWidget {
   var _formKey = GlobalKey<FormState>();
- 
- 
 
   TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    Widget 
+    Widget image_carousel = new Container(
+      height: 200.0,
+      child: Carousel(
+        boxFit: BoxFit.cover,
+        images: [
+          AssetImage('assets/18980.jpg'),
+          AssetImage('assets/3071357.jpg'),
+
+        ],
+        autoplay: true,
+        dotSize: 4.0,
+        indicatorBgPadding: 2.0,
+        ),
+    );
     return Scaffold(
       appBar: AppBar(
         backgroundColor: iconColor,
@@ -93,8 +104,10 @@ class ThirdPage extends StatelessWidget {
       drawer: Drawer(),
       body: Column(
         children: [
-       
-          
+          Container(
+            child: image_carousel,
+          ),
+
           SizedBox(
             height: 15,
           ),
