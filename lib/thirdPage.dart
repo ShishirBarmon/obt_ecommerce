@@ -1,5 +1,6 @@
 import 'package:obt_ecommerce/constants.dart';
 import 'package:obt_ecommerce/secondPage.dart';
+import 'components/products.dart';
 import 'customFormField.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class ThirdPage extends StatelessWidget {
           AssetImage('assets/3071357.jpg'),
 
         ],
-        autoplay: true,
+        autoplay: false,
         dotSize: 4.0,
         indicatorBgPadding: 2.0,
         ),
@@ -40,7 +41,7 @@ class ThirdPage extends StatelessWidget {
               child: Form(
                   key: _formKey,
                   child: TextFormField(
-                    keyboardType: TextInputType.phone,
+                    keyboardType: TextInputType.name,
                     controller: textEditingController,
                     validator: (String value) {
                       if (value.isEmpty) {
@@ -101,11 +102,94 @@ class ThirdPage extends StatelessWidget {
           )
         ],
       ),
-      drawer: Drawer(),
-      body: Column(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+
+            UserAccountsDrawerHeader(
+
+              currentAccountPicture: GestureDetector(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                   shape : RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ) ,
+                  ),
+                  child: Text('Join In'),
+
+                ),
+              ),
+              decoration: BoxDecoration
+                (
+                   color: Colors.grey
+              ),
+            ),
+
+          InkWell(
+            onTap: (){},
+            child: ListTile(
+              title: Text('  Home'),
+
+            ),
+          ),
+            InkWell(
+              onTap: (){},
+              child: ListTile(
+                title: Text('  Profile'),
+              ),
+            ),  InkWell(
+              onTap: (){},
+              child: ListTile(
+                title: Text('  Checkout'),
+              ),
+            ),  InkWell(
+              onTap: (){},
+              child: ListTile(
+                title: Text('  Checkout Alternative'),
+              ),
+            ),  InkWell(
+              onTap: (){},
+              child: ListTile(
+                title: Text('  Your Order'),
+              ),
+            ),  InkWell(
+              onTap: (){},
+              child: ListTile(
+                title: Text('  Order Invoice'),
+              ),
+            ),  InkWell(
+              onTap: (){},
+              child: ListTile(
+                title: Text('  Terms and Services'),
+              ),
+            ),
+            InkWell(
+              onTap: (){},
+              child: ListTile(
+                title: Text('  Privacy Policy'),
+              ),
+            ), InkWell(
+              onTap: (){},
+              child: ListTile(
+                title: Text('  Need Help'),
+              ),
+            ), InkWell(
+              onTap: (){},
+              child: ListTile(
+                title: Text('  Offer'),
+              ),
+            ),
+
+          ],
+        ),
+      ),
+      body: ListView(
         children: [
-          Container(
-            child: image_carousel,
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              child: image_carousel,
+            ),
           ),
 
           SizedBox(
@@ -144,6 +228,18 @@ class ThirdPage extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            height: 15,
+          ),
+
+          Container(
+            height: 320,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Products(),
+          )
+
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
