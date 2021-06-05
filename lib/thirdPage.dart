@@ -1,18 +1,23 @@
 import 'package:obt_ecommerce/constants.dart';
 import 'package:obt_ecommerce/secondPage.dart';
+import 'bottomNavBar.dart';
 import 'components/products.dart';
-import 'customFormField.dart';
-import 'main.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+import 'secondPage.dart';
+
+// ignore: must_be_immutable
 class ThirdPage extends StatelessWidget {
   var _formKey = GlobalKey<FormState>();
+
+
 
   TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     Widget image_carousel = new Container(
       height: 200.0,
       child: Carousel(
@@ -20,12 +25,11 @@ class ThirdPage extends StatelessWidget {
         images: [
           AssetImage('assets/18980.jpg'),
           AssetImage('assets/3071357.jpg'),
-
         ],
         autoplay: false,
         dotSize: 4.0,
         indicatorBgPadding: 2.0,
-        ),
+      ),
     );
     return Scaffold(
       appBar: AppBar(
@@ -54,7 +58,7 @@ class ThirdPage extends StatelessWidget {
                       textEditingController = email as TextEditingController;
                     },
                     decoration: InputDecoration(
-                      // labelStyle: TextStyle(color: textfieldColor),
+                     
 
                       fillColor: appThemeColor,
 
@@ -62,13 +66,7 @@ class ThirdPage extends StatelessWidget {
 
                       border: InputBorder.none,
 
-                      // border: OutlineInputBorder(
-
-                      //   borderRadius: BorderRadius.all(Radius.circular(15.0)),
-
-                      //     borderSide:
-
-                      //         BorderSide(color: Colors.white, style: BorderStyle.none)),
+                     
 
                       suffixIcon: Icon(
                         Icons.search,
@@ -88,13 +86,7 @@ class ThirdPage extends StatelessWidget {
                           color: iconColor,
                         ),
 
-                        //   // set border width
-
-                        //   borderRadius: BorderRadius.all(
-
-                        //       Radius.circular(10.0)), // set rounded corner radius
-
-                        // ),
+                       
                       ),
                     ),
                   )),
@@ -105,85 +97,86 @@ class ThirdPage extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-
             UserAccountsDrawerHeader(
-
               currentAccountPicture: GestureDetector(
                 child: ElevatedButton(
+                  onPressed: (){},
                   style: ElevatedButton.styleFrom(
-                   shape : RoundedRectangleBorder(
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
-                    ) ,
+                    ),
                   ),
                   child: Text('Join In'),
-
                 ),
               ),
-              decoration: BoxDecoration
-                (
-                   color: Colors.grey
+              decoration: BoxDecoration(color: Colors.grey),
+            ),
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('  Home'),
               ),
             ),
-
-          InkWell(
-            onTap: (){},
-            child: ListTile(
-              title: Text('  Home'),
-
-            ),
-          ),
             InkWell(
-              onTap: (){},
+              onTap: () {},
               child: ListTile(
                 title: Text('  Profile'),
               ),
-            ),  InkWell(
-              onTap: (){},
+            ),
+            InkWell(
+              onTap: () {},
               child: ListTile(
                 title: Text('  Checkout'),
               ),
-            ),  InkWell(
-              onTap: (){},
+            ),
+            InkWell(
+              onTap: () {},
               child: ListTile(
                 title: Text('  Checkout Alternative'),
               ),
-            ),  InkWell(
-              onTap: (){},
+            ),
+            InkWell(
+              onTap: () {},
               child: ListTile(
                 title: Text('  Your Order'),
               ),
-            ),  InkWell(
-              onTap: (){},
+            ),
+            InkWell(
+              onTap: () {},
               child: ListTile(
                 title: Text('  Order Invoice'),
               ),
-            ),  InkWell(
-              onTap: (){},
+            ),
+            InkWell(
+              onTap: () {},
               child: ListTile(
                 title: Text('  Terms and Services'),
               ),
             ),
             InkWell(
-              onTap: (){},
+              onTap: () {},
               child: ListTile(
                 title: Text('  Privacy Policy'),
               ),
-            ), InkWell(
-              onTap: (){},
+            ),
+            InkWell(
+              onTap: () {},
               child: ListTile(
                 title: Text('  Need Help'),
               ),
-            ), InkWell(
-              onTap: (){},
+            ),
+            InkWell(
+              onTap: () {},
               child: ListTile(
                 title: Text('  Offer'),
               ),
             ),
-
           ],
         ),
       ),
-      body: ListView(
+      body:      
+
+       ListView(
         children: [
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -191,7 +184,6 @@ class ThirdPage extends StatelessWidget {
               child: image_carousel,
             ),
           ),
-
           SizedBox(
             height: 15,
           ),
@@ -213,16 +205,23 @@ class ThirdPage extends StatelessWidget {
                           builder: (BuildContext context) => SecondPage()));
                       // }
                     },
-                    child: Text(
-                      "Filter",
-                      style: TextStyle(
-                          color: appThemeColor,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Filter",
+                          style: TextStyle(
+                              color: appThemeColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                     Icon(Icons.equalizer)
+                      ],
                     ),
+                    
                     color: aliveColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
+                        
                   ),
                 ),
               ],
@@ -231,56 +230,17 @@ class ThirdPage extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-
           Container(
             height: 320,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
             ),
             child: Products(),
-          )
-
+          ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: indigoColor,
-        iconSize: 35,
-        items: [
-          BottomNavigationBarItem(
-              icon: Padding(
-                padding: const EdgeInsets.only(top: 9.5),
-                child: Icon(
-                  Icons.home,
-                  color: aliveColor,
-                ),
-              ),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.shopping_cart,
-                color: aliveColor,
-              ),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.notifications_active,
-                color: aliveColor,
-              ),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.message,
-                color: aliveColor,
-              ),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person_outline_outlined,
-                color: aliveColor,
-              ),
-              label: ""),
-        ],
-      ),
+      bottomNavigationBar: BottomBar(),
+      
     );
   }
 }

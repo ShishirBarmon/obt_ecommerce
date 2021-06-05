@@ -1,8 +1,6 @@
 import 'package:obt_ecommerce/constants.dart';
-import 'package:obt_ecommerce/secondPage.dart';
 import 'package:obt_ecommerce/thirdPage.dart';
 import 'customFormField.dart';
-import 'main.dart';
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
