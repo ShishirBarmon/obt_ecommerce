@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:obt_ecommerce/constants.dart';
-
-import 'firstPage.dart';
-import 'secondPage.dart';
-import 'thirdPage.dart';
+//import 'package:obt_ecommerce/homepage.dart';
+import 'package:obt_ecommerce/pages/homepage.dart';
+import 'package:obt_ecommerce/pages/logIn_page.dart';
+import '../pages/registration_page.dart';
+//import '../logIn_page.dart';
 import 'customFormField.dart';
 
 
-class BottomBar extends StatefulWidget {
-  const BottomBar({ Key key }) : super(key: key);
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({ Key key }) : super(key: key);
 
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomBar> {
+class _BottomNavBarState extends State<BottomNavBar> {
 
   int _currentIndex = 0;
 
 final List<Widget> _children = [
-  ThirdPage(),
-  SecondPage(),
+  HomePage(),
+  LogIn(),
   CustomFormField(),
-  FirstPage(),
-  SecondPage()
+  HomePage(),
+  Registration()
 
 ];
 
   void onTapTapped(int index) {
-    _currentIndex = index;
+    setState(() {
+          _currentIndex = index;
+    });
   }
 
   @override

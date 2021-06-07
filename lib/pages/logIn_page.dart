@@ -1,9 +1,10 @@
+import 'package:obt_ecommerce/components/bottomNavBar.dart';
+import 'package:obt_ecommerce/components/customFormField.dart';
 import 'package:obt_ecommerce/constants.dart';
-import 'package:obt_ecommerce/thirdPage.dart';
-import 'customFormField.dart';
+//import 'components/customFormField.dart';
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatelessWidget {
+class LogIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +38,7 @@ class SecondPage extends StatelessWidget {
                       Container(
                         height: 270,
                         child: Image.asset(
-                          "assets/18980.jpg",
+                          "assets/images/18980-removebg-preview.png",
                           height: 270,
                           width: 205,
                         ),
@@ -50,7 +51,7 @@ class SecondPage extends StatelessWidget {
               Container(
                 child: Text(
                   'Login',
-                  style: TextStyle(color: registrationTextColor, fontSize: 25),
+                  style: TextStyle(color: registrationTextColor, fontSize: 25,fontFamily: 'Montserrat'),
                 ),
               ),
               SizedBox(
@@ -82,14 +83,15 @@ class SecondPage extends StatelessWidget {
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    ThirdPage()));
+                                    BottomNavBar()));
                           },
                           child: Text(
                             "Login",
                             style: TextStyle(
                                 color: buttonTextColor,
                                 fontSize: 20,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Montserrat'),
                           ),
                           color: appButtonColor,
                           shape: RoundedRectangleBorder(
@@ -107,7 +109,7 @@ class SecondPage extends StatelessWidget {
                           children: [
                             Text(
                               'Already have an account?',
-                              style: TextStyle(color: accountCheckColor),
+                              style: TextStyle(color: accountCheckColor,fontFamily: 'Montserrat'),
                             ),
                             Container(
                               margin: const EdgeInsets.only(
@@ -118,7 +120,7 @@ class SecondPage extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Tap here to ',
-                                    style: TextStyle(color: accountCheckColor),
+                                    style: TextStyle(color: accountCheckColor,fontFamily: 'Montserrat'),
                                   ),
                                   // ignore: deprecated_member_use
                                   GestureDetector(
@@ -127,11 +129,11 @@ class SecondPage extends StatelessWidget {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        ThirdPage()));
+                                                        BottomNavBar()));
                                       },
                                       child: Text(
                                         'Sign In',
-                                        style: TextStyle(color: signColor),
+                                        style: TextStyle(color: signColor,fontFamily: 'Montserrat'),
                                       )),
                                 ],
                               ),

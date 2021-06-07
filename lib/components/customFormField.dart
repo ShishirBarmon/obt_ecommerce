@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../constants.dart';
 
-class CustomFormField extends StatelessWidget {
-  var _formKey = GlobalKey<FormState>();
-  TextEditingController textEditingController = TextEditingController();
-
+class CustomFormField extends StatefulWidget {
   final String hintText;
     final String email;
 
@@ -23,19 +20,30 @@ class CustomFormField extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  _CustomFormFieldState createState() => _CustomFormFieldState();
+}
+
+class _CustomFormFieldState extends State<CustomFormField> {
+  var _formKey = GlobalKey<FormState>();
+
+  TextEditingController textEditingController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
     return Container(
         height: 49,
         width: 322,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0)),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12.0),
+           ),
         child: Form(
           key: _formKey,
           child: TextFormField(
-            keyboardType: keyboardType,
+            keyboardType: widget.keyboardType,
+            
             controller: textEditingController,
             validator: (String value) {
               if (value.isEmpty) {
-                return '$errorMessage';
+                return '${widget.errorMessage}';
               }
               return null;
             },
@@ -43,9 +51,9 @@ class CustomFormField extends StatelessWidget {
               textEditingController = email as TextEditingController ;
             },
             decoration: InputDecoration(
-              hintText: '$hintText',
+              hintText: '${widget.hintText}',
               // labelStyle: TextStyle(color: textfieldColor),
-              fillColor: textfieldColor,
+              fillColor: Colors.grey[200],
               filled: true,
               border: InputBorder.none,
 
@@ -54,7 +62,7 @@ class CustomFormField extends StatelessWidget {
               //     borderSide:
               //         BorderSide(color: Colors.white, style: BorderStyle.none)),
 
-              prefixIcon: icon,
+              prefixIcon: widget.icon,
                focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xffFECE61)),
                           borderRadius: BorderRadius.all(Radius.circular(15.0)),

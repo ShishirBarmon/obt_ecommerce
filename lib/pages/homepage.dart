@@ -1,14 +1,18 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:obt_ecommerce/components/bottomNavBar.dart';
+import 'package:obt_ecommerce/components/products.dart';
 import 'package:obt_ecommerce/constants.dart';
-import 'package:obt_ecommerce/secondPage.dart';
-import 'bottomNavBar.dart';
-import 'components/products.dart';
+import 'package:obt_ecommerce/filter.dart';
+//import 'package:obt_ecommerce/logIn_page.dart';
+//import 'components/bottomNavBar.dart';
+//import 'components/products.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
-import 'secondPage.dart';
+import 'logIn_page.dart';
 
 // ignore: must_be_immutable
-class ThirdPage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   var _formKey = GlobalKey<FormState>();
 
 
@@ -23,8 +27,8 @@ class ThirdPage extends StatelessWidget {
       child: Carousel(
         boxFit: BoxFit.cover,
         images: [
-          AssetImage('assets/18980.jpg'),
-          AssetImage('assets/3071357.jpg'),
+          AssetImage('assets/images/18980.jpg'),
+          AssetImage('assets/images/3071357.jpg'),
         ],
         autoplay: false,
         dotSize: 4.0,
@@ -33,7 +37,7 @@ class ThirdPage extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: iconColor,
+        backgroundColor: Colors.grey[300],
         actions: [
           Center(
             child: Container(
@@ -109,73 +113,73 @@ class ThirdPage extends StatelessWidget {
                   child: Text('Join In'),
                 ),
               ),
-              decoration: BoxDecoration(color: Colors.grey),
+              decoration: BoxDecoration(color: Colors.grey), accountEmail: null, accountName: null,
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Home'),
+                title: Text('  Home', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Profile'),
+                title: Text('  Profile', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Checkout'),
+                title: Text('  Checkout', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Checkout Alternative'),
+                title: Text('  Checkout Alternative', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Your Order'),
+                title: Text('  Your Order', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Order Invoice'),
+                title: Text('  Order Invoice', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Terms and Services'),
+                title: Text('  Terms and Services', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Privacy Policy'),
+                title: Text('  Privacy Policy', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Need Help'),
+                title: Text('  Need Help', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Offer'),
+                title: Text('  Offer', style: TextStyle(fontFamily: "Montserrat"),),
               ),
             ),
           ],
         ),
       ),
       body:      
-
+  
        ListView(
         children: [
           Padding(
@@ -192,7 +196,7 @@ class ThirdPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('No category Selected'),
+                Text('No category Selected', style: TextStyle(fontFamily: "Montserrat"),),
                 Container(
                   height: 29,
                   width: 122,
@@ -202,19 +206,25 @@ class ThirdPage extends StatelessWidget {
                       //Get.defaultDialog(title: "Processing", middleText: '');
                       // if (_formKey.currentState.validate()) {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (BuildContext context) => SecondPage()));
+                          builder: (BuildContext context) => Filter()));
                       // }
                     },
                     child: Row(
                       children: [
                         Text(
-                          "Filter",
+                          "filter",
                           style: TextStyle(
                               color: appThemeColor,
                               fontSize: 20,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.bold
+                              , fontFamily: "Montserrat"
+                              ),
                         ),
-                     Icon(Icons.equalizer)
+                        SizedBox(width: 7,),
+                     Image.asset(
+                          "assets/images/eq.png",
+                         
+                        ),
                       ],
                     ),
                     
@@ -237,9 +247,10 @@ class ThirdPage extends StatelessWidget {
             ),
             child: Products(),
           ),
+        BottomNavBar(),
         ],
       ),
-      bottomNavigationBar: BottomBar(),
+      
       
     );
   }

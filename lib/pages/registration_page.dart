@@ -1,12 +1,13 @@
 import 'package:obt_ecommerce/constants.dart';
-import 'package:obt_ecommerce/secondPage.dart';
-import 'customFormField.dart';
-import 'main.dart';
+//import 'package:obt_ecommerce/logIn_page.dart';
+import '../components/customFormField.dart';
 import 'package:flutter/material.dart';
-import '';
 
-class FirstPage extends StatelessWidget {
-  var _formKey = GlobalKey<FormState>();
+import 'logIn_page.dart';
+
+
+// ignore: must_be_immutable
+class Registration extends StatelessWidget {
 
   TextEditingController textEditingController = TextEditingController();
 
@@ -39,7 +40,7 @@ class FirstPage extends StatelessWidget {
                       Container(
                         height: 270,
                         child: Image.asset(
-                          "assets/3071357.jpg",
+                          "assets/images/3071357.jpg",
                           height: 270,
                           width: 205,
                         ),
@@ -52,7 +53,7 @@ class FirstPage extends StatelessWidget {
               Container(
                 child: Text(
                   'Registration',
-                  style: TextStyle(color: registrationTextColor, fontSize: 25),
+                  style: TextStyle(color: registrationTextColor, fontSize: 25, fontFamily: 'Montserrat'),
                 ),
               ),
               SizedBox(
@@ -99,7 +100,7 @@ class FirstPage extends StatelessWidget {
                             // if (_formKey.currentState.validate()) {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      SecondPage()));
+                                      LogIn()));
                             // }
                           },
                           child: Text(
@@ -107,7 +108,8 @@ class FirstPage extends StatelessWidget {
                             style: TextStyle(
                                 color: buttonTextColor,
                                 fontSize: 20,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Montserrat'),
                           ),
                           color: appButtonColor,
                           shape: RoundedRectangleBorder(
@@ -125,7 +127,7 @@ class FirstPage extends StatelessWidget {
                           children: [
                             Text(
                               'Already have an account?',
-                              style: TextStyle(color: accountCheckColor),
+                              style: TextStyle(color: accountCheckColor,fontFamily: 'Montserrat'),
                             ),
                             Container(
                               margin: const EdgeInsets.only(
@@ -136,7 +138,7 @@ class FirstPage extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Tap here to ',
-                                    style: TextStyle(color: accountCheckColor),
+                                    style: TextStyle(color: accountCheckColor,fontFamily: 'Montserrat'),
                                   ),
                                   // ignore: deprecated_member_use
                                   GestureDetector(
@@ -145,11 +147,11 @@ class FirstPage extends StatelessWidget {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        SecondPage()));
+                                                        LogIn()));
                                       },
                                       child: Text(
                                         'Sign In',
-                                        style: TextStyle(color: signColor),
+                                        style: TextStyle(color: signColor,fontFamily: 'Montserrat'),
                                       )),
                                 ],
                               ),
