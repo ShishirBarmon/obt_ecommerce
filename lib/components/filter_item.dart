@@ -36,8 +36,8 @@ class _FilterItemState extends State<FilterItem> {
                  SizedBox(
                    height: 32,
                  ),
-                 Text(widget.filterText, style: TextStyle(fontSize: 18),),
-               
+                 Text(widget.filterText, style: TextStyle(fontSize: 18, fontFamily: "Montserrat"),),
+
               ],
             ),
           ),

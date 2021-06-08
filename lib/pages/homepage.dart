@@ -1,5 +1,6 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:obt_ecommerce/components/bottomNavBar.dart';
+import 'package:obt_ecommerce/components/hozizontal_category.dart';
 import 'package:obt_ecommerce/components/products.dart';
 import 'package:obt_ecommerce/constants.dart';
 import 'package:obt_ecommerce/filter.dart';
@@ -8,6 +9,7 @@ import 'package:obt_ecommerce/filter.dart';
 //import 'components/products.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:obt_ecommerce/pages/registration_page.dart';
 
 import 'logIn_page.dart';
 
@@ -15,22 +17,20 @@ import 'logIn_page.dart';
 class HomePage extends StatelessWidget {
   var _formKey = GlobalKey<FormState>();
 
-
-
   TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     // ignore: non_constant_identifier_names
     Widget image_carousel = new Container(
-      height: 200.0,
+      height: 154.0,
       child: Carousel(
         boxFit: BoxFit.cover,
         images: [
           AssetImage('assets/images/18980.jpg'),
           AssetImage('assets/images/3071357.jpg'),
         ],
-        autoplay: false,
+        autoplay: true,
         dotSize: 4.0,
         indicatorBgPadding: 2.0,
       ),
@@ -62,35 +62,23 @@ class HomePage extends StatelessWidget {
                       textEditingController = email as TextEditingController;
                     },
                     decoration: InputDecoration(
-                     
-
                       fillColor: appThemeColor,
-
                       filled: true,
-
                       border: InputBorder.none,
-
-                     
-
                       suffixIcon: Icon(
                         Icons.search,
                         size: 25,
                         color: myColor,
                       ),
-
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Color(0xffFECE61)),
                         borderRadius: BorderRadius.all(Radius.circular(15.0)),
                       ),
-
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(15.0)),
-
                         borderSide: BorderSide(
                           color: iconColor,
                         ),
-
-                       
                       ),
                     ),
                   )),
@@ -104,7 +92,7 @@ class HomePage extends StatelessWidget {
             UserAccountsDrawerHeader(
               currentAccountPicture: GestureDetector(
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -113,145 +101,175 @@ class HomePage extends StatelessWidget {
                   child: Text('Join In'),
                 ),
               ),
-              decoration: BoxDecoration(color: Colors.grey), accountEmail: null, accountName: null,
+              decoration: BoxDecoration(color: Colors.grey),
+              accountEmail: null,
+              accountName: null,
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Home', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Home',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Profile', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Profile',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Checkout', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Checkout',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Checkout Alternative', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Checkout Alternative',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Your Order', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Your Order',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Order Invoice', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Order Invoice',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Terms and Services', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Terms and Services',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Privacy Policy', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Privacy Policy',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Need Help', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Need Help',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('  Offer', style: TextStyle(fontFamily: "Montserrat"),),
+                title: Text(
+                  '  Offer',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
               ),
             ),
           ],
         ),
       ),
-      body:      
-  
-       ListView(
+      body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.only(left: 13.0, right: 13.0, top: 5.0),
             child: Container(
               child: image_carousel,
             ),
           ),
           SizedBox(
-            height: 15,
+            height: 13,
           ),
           Container(
-            margin: const EdgeInsets.only(left: 12.0, right: 12.0),
+            margin: const EdgeInsets.only(left: 14.0, right: 14.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('No category Selected', style: TextStyle(fontFamily: "Montserrat"),),
+                Text(
+                  'Categories',
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
                 Container(
-                  height: 29,
-                  width: 122,
+                  height: 24,
+                  width: 100,
                   // ignore: deprecated_member_use
                   child: RaisedButton(
                     onPressed: () {
                       //Get.defaultDialog(title: "Processing", middleText: '');
                       // if (_formKey.currentState.validate()) {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (BuildContext context) => Filter()));
+                          builder: (BuildContext context) => Registration()));
                       // }
                     },
                     child: Row(
                       children: [
+
                         Text(
                           "filter",
                           style: TextStyle(
                               color: appThemeColor,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold
-                              , fontFamily: "Montserrat"
-                              ),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Montserrat"),
                         ),
-                        SizedBox(width: 7,),
-                     Image.asset(
+                        SizedBox(
+                          width: 7,
+                        ),
+                        Image.asset(
                           "assets/images/eq.png",
-                         
                         ),
                       ],
                     ),
-                    
                     color: aliveColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
-                        
                   ),
                 ),
               ],
             ),
           ),
+
           SizedBox(
-            height: 15,
+            height: 5,
           ),
-          Container(
-            height: 320,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Products(),
-          ),
-        BottomNavBar(),
+          HorizontalList(),
+
+
+
+          Products(),
+
+          BottomNavBar(),
         ],
       ),
-      
-      
     );
   }
 }

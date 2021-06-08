@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:obt_ecommerce/pages/homepage.dart';
 
 import 'pages/registration_page.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
        
       //   primarySwatch: Colors.white,
       // ),
-      home: Registration(),
+      home: HomePage(),
     );
   }
 }
